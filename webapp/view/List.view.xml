@@ -1,0 +1,57 @@
+<mvc:View controllerName="demo.zPayment.controller.List" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="Manage Payments">
+					<content>
+						<Table id="tblPayment" inset="false" visible="true" class="sapUiResponsiveMargin" growing="true" growingScrollToLoad="true" width="auto"
+							growingThreshold="10" items="{path:'/Payments'}" noDataText="{i18n>nodatafound}">
+							<headerToolbar>
+								<Toolbar>
+									<content>
+										<Title text="List of Payment" level="H2"/>
+										<ToolbarSpacer/>
+										<!--<SearchField id="txtSearch" liveChange="onSearch" width="50%"/>-->
+										<Button id="btnAdd" icon="sap-icon://add" press="onAdd" text="Add" type="Accept" tooltip="Add Payment"/>
+									</content>
+								</Toolbar>
+							</headerToolbar>
+							<columns>
+								<Column demandPopin="true">
+									<Text text="Receipt No"/>
+								</Column>
+								<Column demandPopin="true" minScreenWidth="Tablet">
+									<Text text="Customer No"/>
+								</Column>
+								<Column demandPopin="true" minScreenWidth="Tablet">
+									<Text text="Customer Name"/>
+								</Column>
+								<Column demandPopin="true" minScreenWidth="Tablet">
+									<Text text="Payment Method"/>
+								</Column>
+								<Column demandPopin="true">
+									<Text text="Amount"/>
+								</Column>
+								<Column demandPopin="true">
+									<Text text=""/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem vAlign="Middle" type="Active">
+									<cells>
+										<Text text="{ReceiptNo}"/>
+										<Text text="{CustomerNo}"/>
+										<Text text="{CustomerName}"/>
+										<Text text="{PaymentMethod}"/>
+										<Text text="{Amount}"/>
+										<Button id="btnPrint" icon="sap-icon://print" press="onPrint" type="Accept" tooltip="Print"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

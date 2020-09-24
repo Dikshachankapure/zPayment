@@ -1,0 +1,17 @@
+{
+	"Payments": [{
+		"ReceiptNo": "1",
+		"CustomerNo": "1001",
+		"CustomerName": "Demo Cust 1",
+		"PaymentMethod": "Cash",
+		"Amount":"10000"
+
+	}, {
+		"ReceiptNo": "2",
+		"CustomerNo": "1002",
+		"CustomerName": "Demo Cust 2",
+		"PaymentMethod": "Online",
+		"Amount":"10000"
+	}]
+
+}

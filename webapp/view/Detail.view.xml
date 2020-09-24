@@ -1,0 +1,57 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="demo.zPayment.controller.Detail"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+	<App>
+		<pages>
+			<Page title="Collect Payments" navButtonPress="_onNavBack" showNavButton="true" floatingFooter="true">
+				<content>
+					<VBox class="sapUiSmallMargin">
+						<f:SimpleForm id="SimpleFormChange354" editable="true" layout="ResponsiveGridLayout" title="Add Location" labelSpanXL="3" labelSpanL="3"
+							labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1"
+							columnsL="1" columnsM="1" singleContainerFullSize="false">
+							<f:content>
+								<Label text="Branch" required="true"/>
+								<ComboBox id="txtbranch" items="{ path: '/Branches', sorter: { path: 'BranchName' } }">
+									<core:Item key="{BranchId}" text="{BranchName}"/>
+								</ComboBox>
+								<Label text="Customer No" required="true"/>
+								<Input id="txtCustomerNo" type="Text"/>
+								<Button id="btnSearch" text="Search" icon="sap-icon://search" press="_onSeachRoute" type="Emphasized" tooltip="Search Location"/>
+								<Label text="Customer Name" required="true"/>
+								<Input id="txtCustomerName" type="Text"/>
+								<Label text="Contract No" required="true"/>
+								<ComboBox id="txtContractNo" items="{ path: '/ProductSet', sorter: { path: 'ProductID' } }">
+									<core:Item key="{ProductID}" text="{Name}"/>
+								</ComboBox>
+								<Label text="Collected Amount" required="true"/>
+								<Input id="txtCollectedAmount" type="Text"/>
+								<Label text="Payment Method" required="true"/>
+								<ComboBox id="txtPaymentMethod">
+									<core:Item key="0" text="Select"/>
+									<core:Item key="1" text="Cash"/>
+									<core:Item key="2" text="Online"/>
+									<core:Item key="3" text="Cheque"/>
+								</ComboBox>
+								<Label text="Cheque/Transfer Method" required="true"/>
+								<Input id="txtTransferMethod" type="Text"/>
+								<Label text="Payment Date" required="true"/>
+								<DatePicker id="dpkPaymentDate" class="sapUiSmallMarginBottom"/>
+								<Label text="Customer Bank" required="true"/>
+								<Input id="txtCustomerBank" type="Text"/>
+								<Label text="Purpose" required="true"/>
+								<TextArea id="txtPurpose" value="" rows="3"/>
+							</f:content>
+						</f:SimpleForm>
+					</VBox>
+				</content>
+				<footer>
+					<OverflowToolbar>
+						<content>
+							<ToolbarSpacer/>
+							<Button id="btnSave" text="Save" visible="true" icon="sap-icon://save" press="onSave" type="Emphasized" tooltip="Save"/>
+						</content>
+					</OverflowToolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
